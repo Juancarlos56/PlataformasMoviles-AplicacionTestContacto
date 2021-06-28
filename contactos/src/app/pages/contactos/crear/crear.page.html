@@ -1,0 +1,56 @@
+<ion-header>
+    <ion-title>crear</ion-title>
+</ion-header>
+
+<ion-content>
+<form  #form="ngForm" >
+    <ion-grid>
+      <ion-row color="primary" justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <div text-center>
+            <h3>Crear nuevo usuario</h3>
+            <br>
+            <br>
+          </div>
+          <div padding>
+            <ion-item>
+              <ion-input  name="name" type="text" placeholder="Nombre" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input  name="name" type="text" placeholder="Edad" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input  name="name" type="text" placeholder="Fecha Nacimiento" ngModel required></ion-input>
+            </ion-item>
+          </div>
+         
+          <ion-button color="success" [disabled]="form.invalid">Crear Usuario</ion-button>
+          <ion-button color="danger">Cancelar</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label fixed>Nombre</ion-label>
+      <ion-input [(ngModel)]="contacto.nombre" type="text" value=""></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label fixed>Telefono</ion-label>
+      <ion-input [(ngModel)]="contacto.telefono" type="text" value=""></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>Direccion</ion-label>
+      <ion-input [(ngModel)]="contacto.direccion" type="text" value=""></ion-input>
+    </ion-item>
+    
+    <ion-button color="success" (click)="guardar()">Guardar Usuario</ion-button>
+
+  </ion-list>
+
+</ion-content>

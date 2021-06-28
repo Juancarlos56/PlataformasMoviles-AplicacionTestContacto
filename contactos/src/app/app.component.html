@@ -1,0 +1,38 @@
+<!--Contenedor principal-->
+<ion-app>
+  <!--Componentes propios de IONIC-->
+  <ion-split-pane contentId="main-content">
+    <ion-menu contentId="main-content" type="overlay">
+      <ion-content>
+        <ion-list id="inbox-list">
+          <ion-list-header>Contactos para Universidad Politecnica Salesiana</ion-list-header>
+          <ion-note>jbarrerab1@ups.edu.ec</ion-note>
+          <!--el Let declara una variable y el appPages esta en app.components.ts-->
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
+            <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
+              <!--Los corchetes ayuda a referir a una variable en las propiedades-->
+              <!--  ios="american-football-outline"-->
+              <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+              <!--Con los corchetes hace referencia a una variable que se va a mostrar en texto-->
+              <ion-label>{{ p.title }}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <!--Click llana al metodo en app.components.ts-->
+          <ion-button expand="block" (click)="handleButtonClick()">Show Alert</ion-button>
+        </ion-list>
+
+      <!--  <ion-list id="labels-list">
+          <ion-list-header>Labels {{ nombre }}</ion-list-header>
+
+          <ion-item *ngFor="let label of labels" lines="none">
+            <ion-icon slot="start" ios="bookmark-outline" md="bookmark-sharp"></ion-icon>
+            <ion-label>{{ label }}</ion-label>
+          </ion-item>
+        </ion-list>-->
+      </ion-content>
+    </ion-menu>
+    <!--Renderiza la pagina-->
+    <!--Hace referencia al app-routing.module.ts-->
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

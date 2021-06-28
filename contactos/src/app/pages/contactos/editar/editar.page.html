@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Editar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<form  #form="ngForm" >
+    <ion-grid>
+      <ion-row color="primary" justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <div text-center>
+            <h3>Editar Usuario</h3>
+            <br>
+            <br>
+          </div>
+          <div padding>
+            <ion-item>
+              <ion-input  name="name" type="text" ngModel required>{{nombre}}</ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input  name="name" type="text" ngModel required>{{edad}}</ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input  name="name" type="text"  ngModel required>{{fecha}}</ion-input>
+            </ion-item>
+          </div>
+         
+          <ion-button color="success">Guardar</ion-button>
+          <ion-button color="danger">Cancelar</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

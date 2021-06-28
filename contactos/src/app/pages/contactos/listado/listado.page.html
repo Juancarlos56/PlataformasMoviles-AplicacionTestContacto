@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>listado</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      Personas
+    </ion-list-header>
+      <ion-item  *ngFor="let p of personas" (click)="editar(p.nombre,p.edad,p.fecha)">
+        <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+        <ion-label>
+          <h2>{{p.nombre}}</h2>
+          <h3>{{p.edad}}</h3>
+          <p>{{p.fecha}}</p>
+        </ion-label>
+      </ion-item>
+  </ion-list>
+
+  
+
+
+  <ion-list>
+    <ion-list-header>
+      Contactos
+    </ion-list-header>
+    <div *ngFor="let contacto of contactos | async" >
+      <ion-item  (click)="editarContacto(contacto)">
+        <ion-icon slot="start"></ion-icon>
+        <ion-label>
+          <h2>{{contacto.nombre}}</h2>
+          <h3>{{contacto.telefono}}</h3>
+          <p>{{contacto.direccion}}</p>
+        </ion-label> 
+      </ion-item>
+    </div>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="crear()">
+      <ion-icon name="save-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>
